@@ -1,0 +1,34 @@
+============================================================
+  AI Vehicle Damage Analyzer
+  Damage Analysis Report — SUMMARY
+============================================================
+  Generated   : 2026-03-24 08:18 UTC
+  Prepared for: Saad
+  Email       : muhammadsaadzubair186@gmail.com
+  Plan        : FREE
+============================================================
+
+SCAN INFORMATION
+----------------------------------------
+  File         : 12676974-hd_1920_1080_25fps.mp4
+  Type         : VIDEO
+  Scan Date    : 2026-03-24 08:11:35.480648
+  Severity     : CRITICAL
+  Detections   : 455
+  Avg Confidence: 63.9%
+  Process Time : 180664ms
+
+DAMAGE TYPES FOUND
+----------------------------------------
+  • fender-dent
+  • Headlight-Damage
+  • front-bumper-dent
+  • Front-Windscreen-Damage
+  • bonnet-dent
+  • doorouter-dent
+  • quaterpanel-dent
+
+============================================================
+  Report ID  : SCAN-000003
+  Powered by : AI Vehicle Damage Analyzer v1.0.0
+============================================================

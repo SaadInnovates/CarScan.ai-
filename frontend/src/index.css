@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		font-family: 'Manrope', 'IBM Plex Sans', 'Segoe UI', sans-serif;
+		color: #f8fafc;
+		background-color: #020712;
+	}
+
+	* {
+		scrollbar-width: thin;
+		scrollbar-color: rgba(34, 211, 238, 0.35) rgba(15, 23, 42, 0.6);
+	}
+
+	body {
+		@apply m-0 bg-[#020712] text-slate-100 antialiased;
+	}
+}
+
+@keyframes auth-float {
+	0%,
+	100% {
+		transform: translateY(0px) scale(1);
+	}
+	50% {
+		transform: translateY(-12px) scale(1.03);
+	}
+}
+
+@keyframes auth-shimmer {
+	0% {
+		transform: translateX(-130%) skewX(-18deg);
+	}
+	100% {
+		transform: translateX(220%) skewX(-18deg);
+	}
+}
+
+@keyframes auth-pulse {
+	0%,
+	100% {
+		opacity: 0.5;
+	}
+	50% {
+		opacity: 0.95;
+	}
+}
+
+@layer components {
+	.hero-gradient {
+		background:
+			radial-gradient(circle at 15% 12%, rgba(45, 212, 191, 0.24), transparent 38%),
+			radial-gradient(circle at 85% 16%, rgba(14, 165, 233, 0.2), transparent 34%),
+			radial-gradient(circle at 50% 90%, rgba(2, 132, 199, 0.15), transparent 45%);
+	}
+
+	.panel-surface {
+		@apply border border-slate-700/70 bg-slate-900/40 backdrop-blur-sm;
+		box-shadow: inset 0 1px 0 rgba(148, 163, 184, 0.12), 0 24px 48px -32px rgba(2, 6, 23, 0.95);
+	}
+
+	.field-input {
+		@apply w-full rounded-xl border border-slate-700/80 bg-slate-950/65 px-3 py-2.5 text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-300/45 focus:ring-2 focus:ring-cyan-300/15;
+	}
+
+	.btn-primary {
+		@apply inline-flex items-center justify-center gap-2 rounded-xl border border-cyan-200/35 bg-gradient-to-r from-cyan-400/90 via-teal-300/90 to-emerald-400/90 px-4 py-2.5 text-sm font-semibold text-slate-950 transition hover:brightness-110;
+	}
+
+	.btn-secondary {
+		@apply inline-flex items-center gap-2 rounded-xl border border-slate-600 bg-slate-900/65 px-4 py-2.5 text-sm text-slate-100 transition hover:border-cyan-300/40 hover:text-cyan-100;
+	}
+
+	.toast-error {
+		@apply fixed bottom-4 right-4 z-50 rounded-xl border border-rose-300/25 bg-rose-950/90 px-4 py-2 text-sm text-rose-100;
+	}
+
+	.toast-success {
+		@apply fixed bottom-4 right-4 z-50 rounded-xl border border-emerald-300/30 bg-emerald-950/90 px-4 py-2 text-sm text-emerald-100;
+	}
+
+	.auth-aurora {
+		background: radial-gradient(circle, rgba(34, 211, 238, 0.24) 0%, rgba(20, 184, 166, 0.18) 35%, rgba(2, 6, 23, 0) 75%);
+		filter: blur(8px);
+		animation: auth-float 8s ease-in-out infinite;
+	}
+
+	.auth-aurora-delay {
+		animation-delay: 1.8s;
+	}
+
+	.auth-grid {
+		background-image:
+			linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+		background-size: 42px 42px;
+	}
+
+	.auth-panel-shine {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.auth-panel-shine::after {
+		content: '';
+		position: absolute;
+		top: -20%;
+		left: 0;
+		width: 44%;
+		height: 140%;
+		background: linear-gradient(120deg, rgba(255, 255, 255, 0), rgba(186, 230, 253, 0.16), rgba(255, 255, 255, 0));
+		animation: auth-shimmer 4.8s ease-in-out infinite;
+	}
+
+	.auth-google-btn {
+		border-color: rgba(148, 163, 184, 0.35);
+		background: linear-gradient(135deg, rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.82));
+		color: #dbeafe;
+		transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.auth-google-btn:hover {
+		border-color: rgba(56, 189, 248, 0.45);
+		transform: translateY(-1px);
+		box-shadow: 0 8px 24px -16px rgba(56, 189, 248, 0.7);
+	}
+
+	.auth-google-btn:disabled {
+		animation: auth-pulse 2.4s ease-in-out infinite;
+	}
+}
