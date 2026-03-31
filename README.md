@@ -28,3 +28,5 @@ cd backend
 .\venv\Scripts\activate
 uvicorn main:app --reload
 ```
+
+Deployed Model at Hugging Face: https://huggingface.co/spaces/SaadZubair/damage-detector
